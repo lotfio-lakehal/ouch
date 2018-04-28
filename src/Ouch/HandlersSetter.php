@@ -10,7 +10,9 @@
  * @link        https://github.com/lotfio/ouch
  */
 
-namespace Ouch\Core;
+namespace Ouch;
+
+use Ouch\Contracts\HandlersInterface;
 
 class HandlersSetter
 {
@@ -19,6 +21,12 @@ class HandlersSetter
      */
     private $handlers;
 
+    /**
+     * fatal handler state
+     * 
+     * @var bool
+     */
+    public $fatal = 12;
 
     /**
      * HandlersSetter constructor
@@ -51,13 +59,13 @@ class HandlersSetter
     }
 
     /**
-     * set falat handler 
-     *
-     * @return void
+     * set fatal handler 
+     * 
+     * @return   void
      */
     public function setFatalHandler()
-    {
-        register_shutdown_function([$this->handlers, "fatalHandler"]);
+    {   
+        if($this->fatal) register_shutdown_function([$this->handlers, "fatalHandler"]);
     }
     /**
      * restore error handler
@@ -77,5 +85,15 @@ class HandlersSetter
     public function restoreExceptionHandler()
     {
         restore_exception_handler();
+    }
+
+    /**
+     * disable fatal error handler
+     * 
+     * @return void
+     */
+    public function restoreFatalHandler()
+    {
+        $this->fatal = false;
     }
 }

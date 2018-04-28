@@ -10,20 +10,21 @@
  * @link        https://github.com/lotfio/ouch
  */
 
-namespace Ouch\Core;
+namespace Ouch;
 
 class Reporter
 {
     /**
      * @var HandlersSetter
      */
-    public $handler;
+    private $handler;
 
     /**
      * Recorder constructor.
      */
     public function __construct()
     {
+        ini_set("display_errors", "0"); // prevent error duplication on fatal 
         $this->handler = new HandlersSetter(new Handlers());
     }
 
@@ -32,13 +33,15 @@ class Reporter
      *
      * @return $this
      */
-    public function enable()
+    public function on()
     {
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
         $this->handler->setFatalHandler();
         return $this;
+
     }
+
 
     /**
      * disable ouch error handler
@@ -46,10 +49,11 @@ class Reporter
      *
      * @return void
      */
-    public function disable()
+    public function off()
     {
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();
+        $this->handler->restoreFatalHandler();
     }
 
 }

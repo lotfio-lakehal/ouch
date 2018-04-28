@@ -10,7 +10,7 @@
  * @link        https://github.com/lotfio/ouch
  */
 
-namespace Ouch\Core;
+namespace Ouch;
 
 class View
 {

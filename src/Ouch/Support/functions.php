@@ -77,7 +77,7 @@ if(! function_exists('renderView'))
      */
     function renderView($file, $errors)
     {
-        return Ouch\Core\View::render(ouch_views($file), $errors);
+        return Ouch\View::render(ouch_views($file), $errors);
     }
 }
 
