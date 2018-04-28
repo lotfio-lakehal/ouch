@@ -7,7 +7,7 @@
  * @author      Lotfio Lakehal <lotfiolakehal@gmail.com>
  * @copyright   2018 Lotfio Lakehal
  * @license     MIT
- * @link        https://github.com/lotfio-lakehal/ouch
+ * @link        https://github.com/lotfio/ouch
  */
 
 namespace Ouch\Core;
@@ -24,7 +24,6 @@ class Reporter
      */
     public function __construct()
     {
-        ini_set("error_reporting", 'true');
         $this->handler = new HandlersSetter(new Handlers());
     }
 
