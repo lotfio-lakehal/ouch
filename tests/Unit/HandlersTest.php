@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Ouch\Exceptions;
 use PHPUnit\Framework\TestCase;
-use Ouch\Core\Handlers;
+use Ouch\Handlers;
 
 class HandlersTest extends TestCase
 {
