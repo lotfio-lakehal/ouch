@@ -22,13 +22,6 @@ class HandlersSetter
     private $handlers;
 
     /**
-     * fatal handler state
-     * 
-     * @var bool
-     */
-    public $fatal = 12;
-
-    /**
      * HandlersSetter constructor
      *
      * @param HandlersInterface $handlers
@@ -65,8 +58,9 @@ class HandlersSetter
      */
     public function setFatalHandler()
     {   
-        if($this->fatal) register_shutdown_function([$this->handlers, "fatalHandler"]);
+        register_shutdown_function([$this->handlers, "fatalHandler"]);
     }
+    
     /**
      * restore error handler
      *
@@ -85,15 +79,5 @@ class HandlersSetter
     public function restoreExceptionHandler()
     {
         restore_exception_handler();
-    }
-
-    /**
-     * disable fatal error handler
-     * 
-     * @return void
-     */
-    public function restoreFatalHandler()
-    {
-        $this->fatal = false;
     }
 }

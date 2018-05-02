@@ -38,8 +38,8 @@ class Reporter
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
         $this->handler->setFatalHandler();
+            
         return $this;
-
     }
 
 
@@ -53,7 +53,6 @@ class Reporter
     {
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();
-        $this->handler->restoreFatalHandler();
     }
 
 }

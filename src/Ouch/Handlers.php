@@ -56,8 +56,10 @@ class Handlers implements HandlersInterface
         );
 
         //TODO render template on exception error
-        http_response_code(500);
-        renderView('500.php', (object) $this->errors);
+        //http_response_code(500);
+        //renderView('500.php', (object) $this->errors);
+
+        echo json_encode($this->errors);
         return;
     }
 
@@ -68,7 +70,7 @@ class Handlers implements HandlersInterface
      */
     public function fatalHandler() //: void
     {
-        $errors = error_get_last();
+       $errors = error_get_last();
         if(is_array($errors))
         {
             $this->setError(
@@ -79,10 +81,12 @@ class Handlers implements HandlersInterface
                 "FatalErrorException"
             );
 
+
             //TODO render template on exception error
-            http_response_code(500);
+            //http_response_code(500);
             //renderView('500.php', (object) $this->errors);
             echo json_encode($this->errors);
+
             return;
         }
     }
@@ -107,7 +111,6 @@ class Handlers implements HandlersInterface
             "trace"   => $trace
         );
     }
-
 
     /**
      * @param string $message
