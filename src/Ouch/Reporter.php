@@ -33,7 +33,7 @@ class Reporter
      *
      * @return $this
      */
-    public function on()
+    public function on() //: Reporter
     {
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
@@ -49,7 +49,7 @@ class Reporter
      *
      * @return void
      */
-    public function off()
+    public function off() //:void
     {
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();

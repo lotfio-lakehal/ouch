@@ -8,3 +8,14 @@
 - Removing bootstrap and keeping spectre css only.
 - change composer repo name from `lotfio-lakehal/ouch` to `lotfio/ouch` to  keep it simple. 
 - style server info and exception trace.
+
+#Ouch v0.2.0
+
+- remove some unneccessary helper functions (ds(), view())
+- travis 
+- unit test 
+- style CI
+- remove core 
+- adding contracts
+- cli error as json
+- 

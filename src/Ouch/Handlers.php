@@ -55,11 +55,7 @@ class Handlers implements HandlersInterface
             $e->getTrace()
         );
 
-        //TODO render template on exception error
-        //http_response_code(500);
-        //renderView('500.php', (object) $this->errors);
-
-        echo json_encode($this->errors);
+        View::render('500.php', (object) $this->errors);
         return;
     }
 
@@ -80,13 +76,8 @@ class Handlers implements HandlersInterface
                 (int)    $errors['line'],
                 "FatalErrorException"
             );
-
-
-            //TODO render template on exception error
-            //http_response_code(500);
-            //renderView('500.php', (object) $this->errors);
-            echo json_encode($this->errors);
-
+            
+            View::render('500.php', (object) $this->errors);
             return;
         }
     }
@@ -100,7 +91,7 @@ class Handlers implements HandlersInterface
      * @param array $trace
      * @return array
      */
-    public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array()) //: array
+    public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array()) // : array
     {   
        return $this->errors = array(
             "type"    => $type,

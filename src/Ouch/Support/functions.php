@@ -10,20 +10,6 @@
  * @link        https://github.com/lotfio/ouch
  */
 
-if( !function_exists('ds'))
-{
-
-    /**
-     * ds() directory separator function
-     *
-     * @return string directory separator
-     */
-    function ds()
-    {
-        return DIRECTORY_SEPARATOR;
-    }
-}
-
 if( !function_exists('ouch_root'))
 {
 
@@ -34,7 +20,7 @@ if( !function_exists('ouch_root'))
      */
     function ouch_root()
     {
-        return dirname(__DIR__) . ds();
+        return dirname(__DIR__) . DIRECTORY_SEPARATOR;
     }
 }
 
@@ -48,7 +34,7 @@ if( !function_exists('ouch_assets'))
      */
     function ouch_assets($file = null)
     {
-        return ouch_root() . 'resources'. ds() .'assets' . ds() . $file;
+        return ouch_root() . 'resources'. DIRECTORY_SEPARATOR .'assets' . DIRECTORY_SEPARATOR . $file;
     }
 }
 
@@ -62,22 +48,7 @@ if( !function_exists('ouch_views'))
      */
     function ouch_views($file = null)
     {
-        return ouch_root() . 'resources'. ds() .'views' . ds() . $file;
-    }
-}
-
-if(! function_exists('renderView'))
-{
-    /**
-     * render view function
-     *
-     * @param $file
-     * @param $errors
-     * @return bool
-     */
-    function renderView($file, $errors)
-    {
-        return Ouch\View::render(ouch_views($file), $errors);
+        return ouch_root() . 'resources'. DIRECTORY_SEPARATOR .'views' . DIRECTORY_SEPARATOR . $file;
     }
 }
 
