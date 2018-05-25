@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Ouch error handler for PHP
+ * Ouch error handler for PHP.
  *
- * @package     Ouch
  * @author      Lotfio Lakehal <lotfiolakehal@gmail.com>
  * @copyright   2018 Lotfio Lakehal
  * @license     MIT
+ *
  * @link        https://github.com/lotfio/ouch
  */
 
@@ -14,5 +14,4 @@ namespace Ouch\Exceptions;
 
 class CoreErrorException extends ErrorException
 {
-    
 }

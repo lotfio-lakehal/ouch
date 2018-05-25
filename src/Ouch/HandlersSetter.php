@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Ouch error handler for PHP
+ * Ouch error handler for PHP.
  *
- * @package     Ouch
  * @author      Lotfio Lakehal <lotfiolakehal@gmail.com>
  * @copyright   2018 Lotfio Lakehal
  * @license     MIT
+ *
  * @link        https://github.com/lotfio/ouch
  */
 
@@ -22,7 +22,7 @@ class HandlersSetter
     private $handlers;
 
     /**
-     * HandlersSetter constructor
+     * HandlersSetter constructor.
      *
      * @param HandlersInterface $handlers
      */
@@ -32,37 +32,37 @@ class HandlersSetter
     }
 
     /**
-     * set error Handler
+     * set error Handler.
      *
      * @return void
      */
     public function setErrorHandler() : void
     {
-        set_error_handler([$this->handlers, "errorHandler"]);
+        set_error_handler([$this->handlers, 'errorHandler']);
     }
 
     /**
-     * set exception handler
+     * set exception handler.
      *
      * @return void
      */
     public function setExceptionHandler() : void
     {
-        set_exception_handler([$this->handlers, "exceptionHandler"]);
+        set_exception_handler([$this->handlers, 'exceptionHandler']);
     }
 
     /**
-     * set fatal handler 
-     * 
-     * @return   void
+     * set fatal handler.
+     *
+     * @return void
      */
     public function setFatalHandler() : void
-    {   
-        register_shutdown_function([$this->handlers, "fatalHandler"]);
+    {
+        register_shutdown_function([$this->handlers, 'fatalHandler']);
     }
-    
+
     /**
-     * restore error handler
+     * restore error handler.
      *
      * @return void
      */
@@ -72,7 +72,7 @@ class HandlersSetter
     }
 
     /**
-     * restore exception handler
+     * restore exception handler.
      *
      * @return void
      */

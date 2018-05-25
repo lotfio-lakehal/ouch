@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
- * Ouch error handler for PHP
+ * Ouch error handler for PHP.
  *
- * @package     Ouch
  * @author      Lotfio Lakehal <lotfiolakehal@gmail.com>
  * @copyright   2018 Lotfio Lakehal
  * @license     MIT
+ *
  * @link        https://github.com/lotfio/ouch
  */
 
@@ -24,28 +26,27 @@ class Reporter
      */
     public function __construct()
     {
-        ini_set("display_errors", "0"); // prevent error duplication on fatal 
+        ini_set('display_errors', '0'); // prevent error duplication on fatal
         $this->handler = new HandlersSetter(new Handlers());
     }
 
     /**
-     * enable ouch error handler
+     * enable ouch error handler.
      *
      * @return $this
      */
-    public function on() : Reporter
+    public function on() : self
     {
         $this->handler->setErrorHandler();
         $this->handler->setExceptionHandler();
         $this->handler->setFatalHandler();
-            
+
         return $this;
     }
 
-
     /**
      * disable ouch error handler
-     * and restore default error handler
+     * and restore default error handler.
      *
      * @return void
      */
@@ -54,5 +55,4 @@ class Reporter
         $this->handler->restoreErrorHandler();
         $this->handler->restoreExceptionHandler();
     }
-
 }
