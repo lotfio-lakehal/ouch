@@ -10,7 +10,7 @@
         processIsolation="false"
         stopOnFailure="false">
     <testsuites>
-        <testsuite>
+        <testsuite name="unitTests">
             <directory>./tests/Unit</directory>
         </testsuite>
     </testsuites>

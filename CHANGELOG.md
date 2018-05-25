@@ -9,7 +9,7 @@
 - change composer repo name from `lotfio-lakehal/ouch` to `lotfio/ouch` to  keep it simple. 
 - style server info and exception trace.
 
-#Ouch v0.2.0
+#Ouch v0.1.7
 
 - remove some unneccessary helper functions (ds(), view())
 - travis 

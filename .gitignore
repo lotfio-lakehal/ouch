@@ -3,3 +3,4 @@
 .phpintel
 index.*
 test.*
+phpunit
