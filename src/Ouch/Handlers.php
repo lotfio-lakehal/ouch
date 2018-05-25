@@ -33,7 +33,7 @@ class Handlers implements HandlersInterface
      * @return void
      * 
      */
-    public function errorHandler(int $type, string $message, string $file, int $line) //:void
+    public function errorHandler(int $type, string $message, string $file, int $line) :void
     {
         $this->whichError($message, $type, $file, $line);
     }
@@ -44,7 +44,7 @@ class Handlers implements HandlersInterface
      * @param object $e exception object
      * @return void throw exception based on the error type
      */
-    public function exceptionHandler($e) //: void
+    public function exceptionHandler($e) : void
     {   
         $this->setError(
             (int)    $e->getCode(),
@@ -64,7 +64,7 @@ class Handlers implements HandlersInterface
      *
      * @return void
      */
-    public function fatalHandler() //: void
+    public function fatalHandler() : void
     {
        $errors = error_get_last();
         if(is_array($errors))
@@ -91,7 +91,7 @@ class Handlers implements HandlersInterface
      * @param array $trace
      * @return array
      */
-    public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array()) // : array
+    public function setError(int $type, string $message,  string $file, int $line, string $class, array $trace = array())  : array
     {   
        return $this->errors = array(
             "type"    => $type,
@@ -123,7 +123,7 @@ class Handlers implements HandlersInterface
      * @throws Exceptions\UserWarningException
      * @throws Exceptions\WarningException
      */
-    public function whichError(string $message, int $type, string $file, int $line) //: void
+    public function whichError(string $message, int $type, string $file, int $line) : void
     {
         switch ($type) {
             case E_ERROR            : throw new Exceptions\ErrorException($message, $type, $type, $file, $line);

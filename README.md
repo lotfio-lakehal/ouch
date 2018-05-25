@@ -12,6 +12,7 @@
 ![version](https://img.shields.io/badge/Version-0.1.1-red.svg)
 ![coverage](https://img.shields.io/badge/coverage-30%25-green.svg)
 ![build](https://travis-ci.org/lotfio/ouch.svg?branch=develop)
+[![StyleCI](https://github.styleci.io/repos/117599927/shield?branch=develop)](https://github.styleci.io/repos/117599927)
 
 ## How it looks like :
 ![image](https://user-images.githubusercontent.com/18489496/36804680-973f3e4c-1cbb-11e8-9d27-f6e7d09a3993.png)
